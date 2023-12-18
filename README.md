@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 # Commerce 
 A Next.js 13 E-commerce starter with a Headless CMS, Algolia, and Contentful and Planned ERP Integration.
 
@@ -38,6 +38,11 @@ This project is intended to be deployed on the edge, so caching is enabled by de
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Screenshots
+![Alt text](public/appScreenshot2.png)
+![Alt text](public/appScreenshot3.png)
+![Alt text](public/appScreenshot4.png)
 
 ## Learn More
 
