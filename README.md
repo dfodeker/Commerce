@@ -1,8 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Commerce 
+A Next.js 13 E-commerce starter with a Headless CMS, Algolia, and Contentful and Planned ERP Integration.
+
+## Providers
+This project is built with the following providers:
+Shopify - Headless E-commerce
+Contentful - Headless CMS
+with an intended ERP integration for inventory management.
+Netsuite - ERP
 
 ## Getting Started
 
-First, run the development server:
+Firstly Create a `.env.local` file similar to `.env.example` and add your ,Shopify, Contentful Credentials.
+
+Then run the development server:
+
+```bash
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -15,6 +30,10 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Caching has been disabled for development purposes. To enable caching, set `CACHE_BEHAVIOUR='force-cache'` in your `.env.local` file.
+To disable caching, set `CACHE_BEHAVIOUR='no-cache'` in your `.env.local` file.
+This project is intended to be deployed on the edge, so caching is enabled by default.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
