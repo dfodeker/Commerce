@@ -2,10 +2,12 @@ import { GridTileImage } from "@components/grid/tile";
 import { getProduct, getProductRecommendations } from "@/lib/shopify";
 import { Gallery } from "@components/product/gallery";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import { Suspense } from "react";
 import { ProductDescription } from "@components/product/product-description";
 import { Image } from "@/lib/shopify/types";
+import NewPoductPage from "@/app/components/product-page";
+
 
 interface Product{
     id: number;
@@ -38,7 +40,8 @@ console.log(products)
 }
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
-    const product = await getProduct(params.handle);
+  
+  const product = await getProduct(params.handle);
   
     if (!product) return notFound();
   
@@ -58,6 +61,8 @@ export default async function ProductPage({ params }: { params: { handle: string
         lowPrice: product.priceRange.minVariantPrice.amount
       }
     };
+    
+
   
     return (
       <>
@@ -67,6 +72,8 @@ export default async function ProductPage({ params }: { params: { handle: string
             __html: JSON.stringify(productJsonLd)
           }}
         />
+        
+        <NewPoductPage/>
         <div className="mx-auto max-w-screen-2xl px-4">
           <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-black md:p-12 lg:flex-row lg:gap-8">
             <div className="h-full w-full basis-full lg:basis-4/6">
@@ -122,5 +129,6 @@ export default async function ProductPage({ params }: { params: { handle: string
           ))}
         </ul>
       </div>
+
     );
   }

@@ -279,23 +279,13 @@ export default function Footer() {
 
           <div className="mt-16 border-t border-gray-100 pt-8">
             <p className="text-center text-xs/relaxed text-gray-500">
-              © Company 2022. All rights reserved.
+              © Company 2023. All rights reserved.
               <br />
-              Created with
-              <a
-                href=""
-                className="text-gray-700 underline transition hover:text-gray-700/75"
-              >
-                Laravel
-              </a>
-              and
-              <a
-                href=""
-                className="text-gray-700 underline transition hover:text-gray-700/75"
-              >
-                Laravel Livewire
-              </a>
-              .
+              Designed in Manitoba
+              
+              
+             
+             
             </p>
           </div>
         </div>
