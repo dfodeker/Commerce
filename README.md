@@ -42,7 +42,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Screenshots
 ![Alt text](public/appScreenshot2.png)
 ![Alt text](public/appScreenshot3.png)
-![Alt text](public/appScreenshot4.png)
+![Alt text](public/appScreenshot5.png)
 
 ## Learn More
 
