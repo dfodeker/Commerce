@@ -34,8 +34,7 @@ import { NextResponse } from "next/server"
 const key = process.env.SHOPIFY_STOREFRONT_PRIVATE_TOKEN;
 const endpoint = `https://${process.env.SHOPIFY_STORE_DOMAIN}/api/${process.env.SHOPIFY_API_VERSION}/graphql.json`;
 export async function GET() {
-    console.log('the store key',key)
-    console.log('the endpoint',endpoint)
+    
     return NextResponse.json(products);
 }
 

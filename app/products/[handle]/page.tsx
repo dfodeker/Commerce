@@ -4,9 +4,10 @@ import { Gallery } from "@components/product/gallery";
 import Link from "next/link";
 import { notFound, usePathname } from "next/navigation";
 import { Suspense } from "react";
-import { ProductDescription } from "@components/product/product-description";
+import { ProductDescription, VariantsPriceing } from "@components/product/product-description";
 import { Image } from "@/lib/shopify/types";
 import NewPoductPage from "@/app/components/product-page";
+import { AddToCart } from "@/app/components/cart/add-to-cart";
 
 
 interface Product{
@@ -26,9 +27,9 @@ interface Props{
 
 export  async function Product({params}: Props){
     const products: Product[]= await fetch('http://localhost:3001/api/content').then(res => res.json())
-console.log(products)
+
     const product = products.find(product => product.handle === params.slug)!
-    console.log(product)
+  
     return(
         <div>
             <h1>{product.title}</h1>
@@ -61,7 +62,7 @@ export default async function ProductPage({ params }: { params: { handle: string
         lowPrice: product.priceRange.minVariantPrice.amount
       }
     };
-    
+    //<NewPoductPage/>
 
   
     return (
@@ -73,9 +74,9 @@ export default async function ProductPage({ params }: { params: { handle: string
           }}
         />
         
-        <NewPoductPage/>
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-black md:p-12 lg:flex-row lg:gap-8">
+        
+        <div className="mx-auto max-w-screen-2xl px-4 bg-white">
+          <div className="flex flex-col  bg-white p-8 dark:border-neutral-800 dark:bg-black md:p-12 lg:flex-row lg:gap-8">
             <div className="h-full w-full basis-full lg:basis-4/6">
               <Gallery
                 images={product.images.map((image: Image) => ({
@@ -83,10 +84,13 @@ export default async function ProductPage({ params }: { params: { handle: string
                   altText: image.altText
                 }))}
               />
+               <ProductDescription product={product} />
             </div>
   
             <div className="basis-full lg:basis-2/6">
-              <ProductDescription product={product} />
+              <VariantsPriceing product={product} />
+
+              <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
             </div>
           </div>
           <Suspense>
