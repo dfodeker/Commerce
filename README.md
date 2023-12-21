@@ -1,13 +1,15 @@
 
 # Commerce 
-A Next.js 13 E-commerce starter with a Headless CMS, Algolia, and Contentful and Planned ERP Integration.
+This Next.js 14 e-commerce starter kit is the fruit of that exploration. It's not just a collection of technologies; it's a carefully crafted solution born out of the desire to break free from 'app land'. By integrating Shopify in a headless manner, I've unlocked a level of customization and feature integration that a typical Shopify setup couldn't dream of. Contentful adds to this freedom, providing a CMS experience that's as flexible as it is powerful. And with plans to integrate Netsuite for ERP, this project is poised to evolve into a robust, all-in-one e-commerce solution.
 
-## Providers
-This project is built with the following providers:
-Shopify - Headless E-commerce
-Contentful - Headless CMS
-with an intended ERP integration for inventory management.
-Netsuite - ERP
+Algolia is the final piece of this tech puzzle, ensuring that the search experience is as seamless and effective as the rest of the platform. This project is more than just a test of capabilities; it's a step towards redefining what an e-commerce platform can be when you're not afraid to push the boundaries.
+
+## Tech Stack:
+
+- Shopify: Powering the e-commerce engine in a headless setup for that sweet, sweet customizability and performance.
+- Contentful: The CMS of choice, easy to manage and primed for syncing up with the upcoming ERP system to keep inventory in check.
+- Netsuite: The ERP heavyweight, slated for future integration to bring order to chaos and efficiency to operations.
+- Algolia: The search solution that ensures no customer leaves frustrated, finding exactly what they're looking for, every time.
 
 ## Getting Started
 
