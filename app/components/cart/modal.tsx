@@ -13,6 +13,7 @@ import CloseCart from './close-cart';
 import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
 import OpenCart from './open-cart';
+import CartUpsell from '@components/cart/upsell';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -64,7 +65,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl dark:border-neutral-700 dark:bg-black/80 dark:text-white md:w-[390px]">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl dark:border-neutral-700 dark:bg-black/80 dark:text-white md:w-[430px]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
 
@@ -74,9 +75,16 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
               </div>
 
               {!cart || cart.lines.length === 0 ? (
-                <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <ShoppingCartIcon className="h-16" />
-                  <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+                <div className=" px-4 pmt-2 flex w-full flex-col items-start justify-left overflow-hidden">
+                  
+                  <p className="mt-6  text-left   text-base">Looks like you haven&apos;t added anything yet, let&apos;s get you started!</p>
+                  <button className='pt-4'>
+                    <Link  className='px-12 py-3 text-sm text-center font-medium text-white   bg-slate-950 rounded-md inline-block'href='/products'>
+                     
+                        Continue Shopping
+                      
+                    </Link>
+                  </button>
                 </div>
               ) : (
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
