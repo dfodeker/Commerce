@@ -4,6 +4,7 @@ import Prose from '../prose';
 import { Product } from '@lib/shopify/types';
 import { VariantSelector } from './variant-selector';
 import ProductRatings from './ratings';
+import { Image } from '@lib/shopify/types';
 
 export function ProductDescription({ product }: { product: Product }) {
   return (
@@ -31,7 +32,9 @@ export function ProductDescription({ product }: { product: Product }) {
   );
 }
 
-export function VariantsPriceing({ product }: { product: Product }) {
+export function VariantsPricing({ product }: { product: Product }) {
+  
+   // console.log(product.variants)
   return(
     <>
      <div className="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
