@@ -6,6 +6,7 @@ import Nav from './components/nav'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import { Carousel } from './components/carousel'
+import Hero from './components/hero'
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         
         {/* Hero section */}
         <div className="flex flex-col md:flex-row z-10">
+          <Hero/>
           <div className="md:w-1/2">
             <img src="/gift-guide.gif" alt="Holiday Sales" className="w-full h-auto" />
           </div>

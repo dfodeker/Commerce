@@ -24,7 +24,10 @@
       "@pages/*": ["./pages/*"],
       "@styles/*": ["./styles/*"],
       "@utils/*": ["./utils/*"],
-      "@lib/*": ["./lib/*"]
+      "@lib/*": ["./lib/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@api/*": ["./api/*"]
+      
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

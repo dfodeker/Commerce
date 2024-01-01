@@ -4,7 +4,7 @@ import { Gallery } from "@components/product/gallery";
 import Link from "next/link";
 import { notFound, usePathname } from "next/navigation";
 import { Suspense } from "react";
-import { ProductDescription, VariantsPriceing } from "@components/product/product-description";
+import { ProductDescription,  VariantsPricing } from "@components/product/product-description";
 import { Image } from "@/lib/shopify/types";
 import NewPoductPage from "@/app/components/product-page";
 import { AddToCart } from "@/app/components/cart/add-to-cart";
@@ -43,7 +43,7 @@ export  async function Product({params}: Props){
 export default async function ProductPage({ params }: { params: { handle: string } }) {
   
   const product = await getProduct(params.handle);
-  
+  console.log(product)
     if (!product) return notFound();
   
     const productJsonLd = {
@@ -63,6 +63,9 @@ export default async function ProductPage({ params }: { params: { handle: string
       }
     };
     //<NewPoductPage/>
+    // we need to display selected variant images
+
+
 
   
     return (
@@ -88,7 +91,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             </div>
   
             <div className="basis-full lg:basis-2/6">
-              <VariantsPriceing product={product} />
+              <VariantsPricing product={product} />
 
               <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
             </div>
