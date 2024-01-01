@@ -39,6 +39,9 @@ export function VariantSelector({ options, variants }: { options: ProductOption[
     }));
   }
 
+
+
+  
   function renderOptionButtons(option:any, combinations:any) {
     return option.values.map((value:any) => {
       const optionNameLowerCase = option.name.toLowerCase();
