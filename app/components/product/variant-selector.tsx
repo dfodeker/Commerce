@@ -52,7 +52,7 @@ export function VariantSelector({ options, variants }: { options: ProductOption[
       const buttonClass = getButtonClass(isActive, isAvailableForSale);
      
       if (optionNameLowerCase === 'color') {
-        const matchingCombination = combinations.find(combination => combination.color === value);
+        const matchingCombination = combinations.find((combination: { color: any; }) => combination.color === value);
         //console.log(matchingCombination)
         if (matchingCombination) {
           return (
