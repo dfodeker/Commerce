@@ -21,8 +21,8 @@ export function VariantSelector({ options, variants }: { options: ProductOption[
   const combinations = createCombinations(variants);
 
   return options.map((option) => (
-    <dl className="mb-8" key={option.id}>
-      <dt className="mb-4 text-sm uppercase tracking-wide">{option.name}</dt>
+    <dl className=" mt-4 mb-8" key={option.id}>
+     
       <dd className="flex flex-wrap gap-3">
         {renderOptionButtons(option, combinations)}
       </dd>
@@ -99,8 +99,8 @@ export function VariantSelector({ options, variants }: { options: ProductOption[
   }
 
   function getButtonClass(isActive:any, isAvailableForSale:any) {
-    if (isActive) return 'flex min-w-[48px] items-center justify-center rounded-lg border bg-neutral-100 px-2 py-1 text-sm dark:border-neutral-800 dark:bg-neutral-900 ring-2 ring-blue-600';
+    if (isActive) return 'flex min-w-[70px] min-h-[50px] items-center justify-center rounded-lg border bg-neutral-100 px-2 py-1 text-sm dark:border-neutral-800 dark:bg-neutral-900 ring-2 ring-blue-600';
     if (!isAvailableForSale) return 'relative z-10 cursor-not-allowed overflow-hidden bg-neutral-100 text-neutral-500 ring-1 ring-neutral-300 before:absolute before:inset-x-0 before:-z-10 before:h-px before:-rotate-45 before:bg-neutral-300 before:transition-transform dark:bg-neutral-900 dark:text-neutral-400 dark:ring-neutral-700 before:dark:bg-neutral-700';
-    return 'flex min-w-[48px] items-center justify-center rounded-lg border bg-neutral-100 px-2 py-1 text-sm dark:border-neutral-800 dark:bg-neutral-900 ring-1 ring-transparent transition duration-300 ease-in-out hover:scale-110 hover:ring-blue-600';
+    return 'flex min-w-[70px]  min-h-[50px] items-center justify-center rounded-lg border bg-neutral-100 px-2 py-1 text-sm dark:border-neutral-800 dark:bg-neutral-900 ring-1 ring-transparent transition duration-300 ease-in-out hover:scale-110 hover:ring-blue-600';
   }
 }

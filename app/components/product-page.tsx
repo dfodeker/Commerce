@@ -190,7 +190,7 @@ export default function NewPoductPage() {
             <form className="mt-10">
               {/* Colors */}
               <div>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
+              
 
                 <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                   <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>

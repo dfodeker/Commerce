@@ -34,7 +34,7 @@ return (
         <Image
           className="h-full w-full object-contain"
           fill
-          sizes="(min-width: 1024px) 66vw, 100vw"
+          sizes="(min-width: 1024px) 80vw, 100vw"
           alt={images[imageIndex]?.altText as string}
           src={images[imageIndex]?.src as string}
           priority={true}
@@ -65,7 +65,7 @@ return (
       </div>
 
       {images.length > 1 ? (
-        <ul className="my-12 flex items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
+        <ul className="hidden lg:flex my-12 items-center justify-center gap-2 overflow-auto py-1 lg:mb-0">
           {images.map((image, index) => {
             const isActive = index === imageIndex;
             const imageSearchParams = new URLSearchParams(searchParams.toString());
@@ -73,7 +73,8 @@ return (
             imageSearchParams.set('image', index.toString());
 
             return (
-              <li key={image.src} className="h-20 w-20">
+              <li key={image.src} className="h-25 w-25 md:h-20 md:w-20">
+              
                 <Link
                   aria-label="Enlarge product image"
                   href={createUrl(pathname, imageSearchParams)}

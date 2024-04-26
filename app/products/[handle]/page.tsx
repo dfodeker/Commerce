@@ -4,7 +4,7 @@ import { Gallery } from "@components/product/gallery";
 import Link from "next/link";
 import { notFound, usePathname } from "next/navigation";
 import { Suspense } from "react";
-import { ProductDescription,  VariantsPricing } from "@components/product/product-description";
+import { ProductDescription,  ProductTitle,  VariantsPricing } from "@components/product/product-description";
 import { Image } from "@/lib/shopify/types";
 import NewPoductPage from "@/app/components/product-page";
 import { AddToCart } from "@/app/components/cart/add-to-cart";
@@ -43,7 +43,7 @@ export  async function Product({params}: Props){
 export default async function ProductPage({ params }: { params: { handle: string } }) {
   
   const product = await getProduct(params.handle);
-  console.log(product)
+  //console.log(product)
     if (!product) return notFound();
   
     const productJsonLd = {
@@ -79,27 +79,31 @@ export default async function ProductPage({ params }: { params: { handle: string
         
         
         <div className="mx-auto max-w-screen-2xl px-4 bg-white">
-          <div className="flex flex-col  bg-white p-8 dark:border-neutral-800 dark:bg-black md:p-12 lg:flex-row lg:gap-8">
-            <div className="h-full w-full basis-full lg:basis-4/6">
-              <Gallery
+    <div className="flex flex-col bg-white p-8 dark:border-neutral-800 dark:bg-black md:p-12 lg:flex-row lg:gap-8">
+        <div className="h-full w-full basis-full lg:basis-4/6">
+            <Gallery
                 images={product.images.map((image: Image) => ({
-                  src: image.url,
-                  altText: image.altText
+                    src: image.url,
+                    altText: image.altText
                 }))}
-              />
-               <ProductDescription product={product} />
-            </div>
-  
-            <div className="basis-full lg:basis-2/6">
-              <VariantsPricing product={product} />
-
-              <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
-            </div>
-          </div>
-          <Suspense>
-            <RelatedProducts id={product.id} />
-          </Suspense>
+            />
         </div>
+
+        <div className="basis-full lg:basis-2/6">
+            {/* Moved ProductTitle into this div to appear above VariantsPricing on desktop */}
+            <ProductTitle product={product} />
+            <VariantsPricing product={product} />
+            <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
+        </div>
+    </div>
+    <Suspense>
+        <div>
+            {/* Placeholder if needed */}
+        </div>
+        <RelatedProducts id={product.id} />
+    </Suspense>
+</div>
+
         
       </>
     );

@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
       
       <div className='bg-white'>
+      <Nav/>
       {children}
       </div>
        

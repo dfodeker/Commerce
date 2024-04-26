@@ -29,7 +29,7 @@ function SubmitButton({
   }
 
   if (!selectedVariantId) {
-    return (
+    return (<>
       <button
         aria-label="Please select an option"
         aria-disabled
@@ -41,6 +41,17 @@ function SubmitButton({
         
         Add To Cart
       </button>
+      <button className={clsx(favoriteButtonClasses,{
+        'hover:opacity-90': true,
+        disabledClasses: pending
+      
+    })}>
+        <div className="absolute left-0 ml-4">
+            {pending ? <LoadingDots className="mb-3 bg-white" /> : <HeartIcon className="h-5" />}
+        </div>
+        Add To Favorites
+    </button>
+      </>
     );
   }
 

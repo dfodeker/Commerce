@@ -5,11 +5,24 @@ import { Product } from '@lib/shopify/types';
 import { VariantSelector } from './variant-selector';
 import ProductRatings from './ratings';
 import { Image } from '@lib/shopify/types';
+export function ProductTitle({ product }: { product: Product }) {
+  return<>
+  <div className="mb-6 flex flex-col ">
+        <h1 className="mb-2 text-2xl font-medium">{product.title}</h1>
+        <div className=" mr-auto w-auto text-xl tracking-tight text-gray-900">
+          <Price
+            amount={product.priceRange.maxVariantPrice.amount}
+            currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+          />
+        </div>
+      </div>
+  </>
+}
 
 export function ProductDescription({ product }: { product: Product }) {
   return (
     <>
-     <br/>
+    
      <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
             {/* Description and details */}
             <div>
@@ -37,16 +50,7 @@ export function VariantsPricing({ product }: { product: Product }) {
    // console.log(product.variants)
   return(
     <>
-     <div className="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
-        <h1 className="mb-2 text-4xl font-medium">{product.title}</h1>
-        <div className=" pt-4 mr-auto w-auto text-2xl tracking-tight text-gray-900">
-          <Price
-            amount={product.priceRange.maxVariantPrice.amount}
-            currencyCode={product.priceRange.maxVariantPrice.currencyCode}
-          />
-        </div>
-        <ProductRatings/>
-      </div>
+     
       <VariantSelector options={product.options} variants={product.variants} />
       </>
   )
