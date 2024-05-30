@@ -15,7 +15,7 @@ export default async function FeaturedCollection() {
     const halfHeight = image.height / 2
     return (<>
 <Link href={`/collections/${collection.handle}`}>
-    <div className="relative   h-[1000px] bg-cover bg-no-repeat bg-center w-full" style={ {backgroundImage:`url(${image.url})`}}>
+    <div className="relative   h-[800px] bg-cover bg-no-repeat bg-center w-full" style={ {backgroundImage:`url(${image.url})`}}>
     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
           
           {/* Label indicating this is a featured post */}
