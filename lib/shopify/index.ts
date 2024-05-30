@@ -14,7 +14,8 @@ import { getCartQuery } from './queries/cart'
 import {
   getCollectionProductsQuery,
   getCollectionQuery,
-  getCollectionsQuery
+  getCollectionsQuery,
+  featuredCollectionQuery
 } from './queries/collection';
 import { getMenuQuery } from './queries/menu';
 import { getPageQuery, getPagesQuery } from './queries/page';
@@ -39,6 +40,7 @@ import {
   ShopifyCollectionProductsOperation,
   ShopifyCollectionsOperation,
   ShopifyCreateCartOperation,
+  ShopifyFeaturedCollectionOperation,
   ShopifyMenuOperation,
   ShopifyPageOperation,
   ShopifyPagesOperation,
@@ -47,7 +49,9 @@ import {
   ShopifyProductRecommendationsOperation,
   ShopifyProductsOperation,
   ShopifyRemoveFromCartOperation,
-  ShopifyUpdateCartOperation
+  ShopifyUpdateCartOperation,
+  ShopifyFeaturedCollection
+
 } from './types';
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, 'https://') : '';
@@ -278,6 +282,19 @@ export async function getCollection(handle: string): Promise<Collection | undefi
   });
 
   return reshapeCollection(res.body.data.collection);
+}
+//warning 
+//This function is not working properly
+export async function getFeaturedCollection(): Promise<ShopifyFeaturedCollection>{
+  const res = await shopifyFetch<ShopifyFeaturedCollectionOperation>({
+    query: featuredCollectionQuery,
+  });
+ if (!res.body.data.collections) {
+    console.log(`No default collection found`);
+    
+  }
+  return res.body.data.collections.edges[0].node;
+ 
 }
 
 export async function getCollectionProducts({

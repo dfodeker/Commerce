@@ -14,6 +14,27 @@ const collectionFragment = /* GraphQL */ `
   ${seoFragment}
 `;
 
+ /*optional addition of country and language for i18 */
+export const featuredCollectionQuery = /* GraphQL */ `
+{
+  collections(first: 1, sortKey:UPDATED_AT,reverse:true) {
+    edges {
+      node{
+        id
+        title
+        image{
+          url
+          altText
+          width
+          height
+        }
+        handle 
+      }
+    }
+  }
+}
+`;
+
 export const getCollectionQuery = /* GraphQL */ `
   query getCollection($handle: String!) {
     collection(handle: $handle) {

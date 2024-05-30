@@ -108,6 +108,13 @@ export type ShopifyCollection = {
   seo: SEO;
   updatedAt: string;
 };
+export type ShopifyFeaturedCollection ={
+  id: string;
+  title: string;
+  image: Image;
+  handle: string;
+};
+
 
 export type ShopifyProduct = {
   id: string;
@@ -206,6 +213,12 @@ export type ShopifyCollectionProductsOperation = {
     sortKey?: string;
   };
 };
+export type ShopifyFeaturedCollectionOperation = {
+  data: {
+    collections: Connection<ShopifyFeaturedCollection>;
+  };
+};
+
 
 export type ShopifyCollectionsOperation = {
   data: {

@@ -7,22 +7,33 @@ import Image from 'next/image'
 import { Suspense } from 'react'
 import { Carousel } from './components/carousel'
 import Hero from './components/hero'
+import  FeaturedCollection  from './components/collections/featured'
+import { getFeaturedCollection } from '@/lib/shopify'
+
+
+
 
 
 export default function Home() {
+
+
   return (
     <>
-    <Nav/>
+    
       <div className='bg-white relative'>
         {/* Tree icons sprinkled around */}
+        <section>
+          <Suspense>
+          <FeaturedCollection />
+          </Suspense>
         
-        {/* Hero section */}
-        
-        <br /><br /><br /><br /><br /><br /><br />
-        <Suspense>
-        <Carousel />
-        </Suspense>
-        <ThreeItemGrid />
+        </section>
+        <section className='pt-5'>
+          <Suspense>
+        <Carousel/>
+
+        </Suspense></section>
+       
 
       </div>
     </>
