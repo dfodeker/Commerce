@@ -8,7 +8,7 @@ Algolia is the final piece of this tech puzzle, ensuring that the search experie
 
 - Shopify: Powering the e-commerce engine in a headless setup for that sweet, sweet customizability and performance.
 - Contentful: The CMS of choice, easy to manage and primed for syncing up with the upcoming ERP system to keep inventory in check.
-- Netsuite: The ERP heavyweight, slated for future integration to bring order to chaos and efficiency to operations.
+- Netsuite: The ERP heavyweight, slated for future integration to bring order to chaos and efficiency to operations.(planned)
 
 
 ## Getting Started
