@@ -2,7 +2,6 @@
 # Commerce 
 This Next.js 14 e-commerce starter kit is the fruit of that exploration. It's not just a collection of technologies; it's a carefully crafted solution born out of the desire to break free from 'app land'. By integrating Shopify in a headless manner, I've unlocked a level of customization and feature integration that a typical Shopify setup couldn't dream of. Contentful adds to this freedom, providing a CMS experience that's as flexible as it is powerful. And with plans to integrate Netsuite for ERP, this project is poised to evolve into a robust, all-in-one e-commerce solution.
 
-Algolia is the final piece of this tech puzzle, ensuring that the search experience is as seamless and effective as the rest of the platform. This project is more than just a test of capabilities; it's a step towards redefining what an e-commerce platform can be when you're not afraid to push the boundaries.
 
 ## Tech Stack:
 
